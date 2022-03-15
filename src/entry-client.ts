@@ -4,12 +4,14 @@ import {sync} from "vuex-router-sync"
 import App from './App.vue';
 import createRouter from "./modules/router/index"
 import createStore from "./modules/store/index"
+import uiModules from "@/components/ui-modules"
 
 const router = createRouter();
 const store = createStore();
 sync(store, router);
 
 const app = createSSRApp(App);
+app.use(uiModules);
 app.use(router);
 app.use(store);
 

@@ -1,13 +1,8 @@
-<template>{{ store.state.message }}</template>
+<template>
+    <div class="home">Home</div>
+</template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { useStore } from 'vuex'
-
-export default defineComponent({
-  setup: () => {
-    const store = useStore()
-    return { store }
-  },
-})
+import { defineComponent } from "vue";
+export default defineComponent({});
 </script>

@@ -6,6 +6,7 @@ import { renderToString } from '@vue/server-renderer';
 import App from './App.vue';
 import createRouter from "./modules/router/index"
 import createStore from "./modules/store/index"
+import uiModules from "@/components/ui-modules"
 
 export async function render(url) {
     const router = createRouter();
@@ -13,6 +14,7 @@ export async function render(url) {
     sync(store, router);
 
     const app = createSSRApp(App);
+    app.use(uiModules);
     app.use(router);
     app.use(store);
 
